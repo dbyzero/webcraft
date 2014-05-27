@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var Loop = org.dbyzero.tools.Loop;
 
 	//parameters
-	var FPS = 50;
+	var FPS = 60;
 	var delay = 0; //0 = infinite
 	var chickHeight = 22;
 	var chickWidth = 20;
@@ -12,8 +12,8 @@ $(document).ready(function(){
 	var chickSpeedY = -450;
 	var gravity = 1000;
 	var wind = 0;
-	var chickByLoop = 2;
-	var maxChick = 100;
+	var chickByLoop = 6;
+	var maxChick = 300;
 
 	//domVar
 	var selectorCss = '.chick';
@@ -23,6 +23,7 @@ $(document).ready(function(){
 	var headerHeight = $('header').height();
 	var menuHeight = $('header > menu').height();
 	var websiteWidth = $('#main').width();
+	var windowHeight = $(window).height();
 
 	//used in process
 	var lastUpdate = currentTime = new Date().getTime();
@@ -78,16 +79,16 @@ $(document).ready(function(){
 
 			//out of screen
 			$elem = $('#chick-'+chick['id']);
-			if(chick['py'] > $(window).height() -chickHeight) {
+			if(chick['py'] > windowHeight) {
 				$elem.remove();
 				listChicks.splice(i, 1);
 				continue;
 			}
-			if($elem.attr('offsetLeft') < 0 || $elem.attr('offsetLeft') > $(window).width() -chickWidth) {
-				$elem.remove();
-				listChicks.splice(i, 1);
-				continue;
-			}
+			//if($elem.attr('offsetLeft') < 0 || $elem.attr('offsetLeft') > $(window).width() -chickWidth) {
+			//	$elem.remove();
+			//	listChicks.splice(i, 1);
+			//	continue;
+			//}
 
 			$elem.css('transform','translate('+chick['px']+'px,'+chick['py']+'px)');
 		};
