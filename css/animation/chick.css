@@ -27,7 +27,7 @@
 	-o-animation: chick-walking-left 0.8s steps(8) infinite;
 	-moz-animation: chick-walking-left 0.8s steps(8) infinite;
 	animation: chick-walking-left 0.8s steps(8) infinite;
-	background: url(../../asset/spritesheet/chick.png) 0 -22 no-repeat; 
+	background: url(../../asset/spritesheet/chick.png) 0 -22px no-repeat; 
 }
 
 .chick-zero-walking-right {
@@ -43,7 +43,7 @@
 	-o-animation: chick-walking-left 0.4s steps(8) infinite;
 	-moz-animation: chick-walking-left 0.4s steps(8) infinite;
 	animation: chick-walking-left 0.4s steps(8) infinite;
-	background: url(../../asset/spritesheet/chick.png) 0 -22 no-repeat; 
+	background: url(../../asset/spritesheet/chick.png) 0 -22px no-repeat; 
 }
 
 .chick-walking-right {

@@ -52,7 +52,7 @@ $(document).ready(function(){
 					'id':id,
 					'px':randVar,
 					'py':headerHeight-menuHeight-chickHeight,
-					'vx':((randVar % 2) === 0) ? 0-chickSpeedX : chickSpeedX,
+					'vx':((randVar % 2) === 0) ? -chickSpeedX : chickSpeedX,
 					'vy':chickSpeedY,
 					'ax':wind,
 					'ay':gravity
