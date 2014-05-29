@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
-	//loop tools 
+	//tools 
 	var Loop = org.dbyzero.tools.Loop;
+	var KeyController = org.dbyzero.tools.KeyboardController;
 
 	//parameters
 	var FPS = 50;
@@ -29,6 +30,7 @@ $(document).ready(function(){
 	var dt, domChick, nbrChick, classOriented, randVar, $elem, id, i, chick;
 	var chickIterator = 0;
 	var listChicks = new Array();
+	var running = false;
 
 	//make a chick on the page
 	var makeChick = function() {
@@ -96,10 +98,23 @@ $(document).ready(function(){
 
 	//start da univerrrrrse !!!
 	var mainLoop = new Loop('main loop',1000/FPS,delay);
-	mainLoop.start(
-		function(){
+	var mainLoopFn = function(){
+			running = true;
 			updateChicks();
 			makeChick();
+	}
+
+	KeyController.addManagedKey(KeyController.keys.SPACE);
+	$(document).on('org.dbyzero.tools.KeyboardController.keyPressed.'+KeyController.keys.SPACE,function(e){
+		if(running){
+			mainLoop.stop();
+			$(selectorCss).remove();
+			running = false;
+		} else {
+			mainLoop.start(mainLoopFn);
 		}
-	);
+		e.preventDefault();
+		return false;
+	})
+	
 });

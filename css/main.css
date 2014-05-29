@@ -84,7 +84,13 @@ section#content {
 	background-color:#ccc;
 }
 
-section#content > .content_block {
+section.list_content_block {
+	width:250px;
+	height:550px;
+	float:right;
+}
+
+section.content_block {
 	width:250px;
 	height:170px;
 	padding:0;
@@ -93,6 +99,21 @@ section#content > .content_block {
 	float:right;
 	clear:right;
 	background-color:#999;
+}
+
+section.list_content_info {
+	width:710px;
+	height:550px;
+	float:left;
+}
+
+section.info {
+	width:710px;
+	height:160px;
+	padding:0;
+	border:0;
+	background-color:#777;
+	margin:23px 0 0 20px;
 }
 
 section#col_right > div.info_block{
