@@ -1,3 +1,13 @@
+.chick-zero {
+	background: url(../../asset/spritesheet/chick.png) -140px 0 no-repeat; 
+	height: 22px;
+	width: 20px;
+	position:absolute;
+	top:88px;
+	left:227;
+	z-index:11;
+}
+
 .chick {
 	height: 22px;
 	width: 20px;

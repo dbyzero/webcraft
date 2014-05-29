@@ -1,0 +1,33 @@
+div.campfire {
+	width:37px;
+	height:44px;
+	-webkit-animation: campfire-animation 0.4s steps(4) infinite;
+	-o-animation: campfire-animation 0.4s steps(4) infinite;
+	-moz-animation: campfire-animation 0.4s steps(4) infinite;
+	animation: campfire-animation 0.4s steps(4) infinite;
+	background: url(../../asset/spritesheet/campfire.png) 0 -22 no-repeat; 
+	position:absolute;
+	bottom:0px;
+	right:0px;
+}
+
+@-webkit-keyframes campfire-animation
+{
+	0% {background-position: 0 0px; } 
+	100% {background-position: -148px 0px; }
+} 
+@-o-keyframes campfire-animation
+{
+	0% {background-position: 0 0px; } 
+	100% {background-position: -148px 0px; }
+}
+@-moz-keyframes campfire-animation
+{
+	0% {background-position: 0 0px; } 
+	100% {background-position: -148px 0px; }
+}
+@keyframes campfire-animation
+{
+	0% {background-position: 0 0px; } 
+	100% {background-position: -148px 0px; }
+}

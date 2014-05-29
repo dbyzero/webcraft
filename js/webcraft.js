@@ -103,6 +103,8 @@ $(document).ready(function(){
 			running = true;
 			updateChicks();
 			makeChick();
+			$('.chick-zero').hide();
+			$('body').css('overflow','hidden');
 	}
 
 	KeyController.addManagedKey(KeyController.keys.SPACE);
@@ -110,10 +112,18 @@ $(document).ready(function(){
 		if(running){
 			mainLoop.stop();
 			$(selectorCss).remove();
+			$('.chick-zero').show();
 			running = false;
+			$('body').css('overflow','auto');
 		} else {
 			mainLoop.start(mainLoopFn);
 		}
+		e.preventDefault();
+		return false;
+	})
+
+	$('.chick-zero').click(function(e){
+		mainLoop.start(mainLoopFn);
 		e.preventDefault();
 		return false;
 	})
