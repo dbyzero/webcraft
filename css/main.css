@@ -123,16 +123,30 @@ section.list_content_block {
 }
 
 section.content_block {
-	font-family: moderncraft;
 	letter-spacing: 1px;
 	width:230px;
-	height:160px;
-	padding:10px 0 0 20px;
+	height:170px;
+	padding:0px 0 0 20px;
 	margin-bottom:20px;
 	border:0;
 	float:right;
 	clear:right;
 	background-color:#e2c593;
+}
+
+section.content_block p.subtitle_progress_bar {
+	font-family: moderncraft;
+	padding:0;
+	margin:0;
+}
+
+section.content_block ul {
+	padding:0;
+	margin:10px 0 0 0;
+}
+
+section.content_block ul li {
+	list-style-type: none;
 }
 
 section.list_content_info {
