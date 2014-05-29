@@ -1,3 +1,9 @@
+@font-face
+{
+	font-family: moderncraft;
+	src: url(../font/moderncraft.ttf);
+}
+
 html, body {
 	margin:0;
 	border:0;
@@ -46,7 +52,7 @@ section#main {
 
 #main > header > img#header_grass {
 	position:absolute;
-	top:92px;
+	top:34px;
 	left:0px;
 	z-index:10;
 }
@@ -58,9 +64,19 @@ section#main {
 	height:40px;
 	margin:0;
 	padding:0;
+	font-family: moderncraft;
 	font-weight: bold;
 	font-size:20px;
 	border-top:3px solid #5b4225;
+	letter-spacing: 5px;
+}
+
+#main > header > menu a {
+	color:#222;
+}
+
+#main > header > menu a:hover {
+	color:#444444;
 }
 
 #main > header > menu > ul {
@@ -76,13 +92,19 @@ section#main {
 	display:block;
 	float:left;
 	height:32px;
-	background-color:#999;
+	background-color:#e2c593;
 	margin:0;
 	border:0;
 	padding:0;
 	width:25%;
 	text-align:center;
 	padding-top:8px;
+}
+
+#main > header > menu > ul > li > div#progressbar{
+	width:80%;
+	margin:0 auto;
+	height:20px;
 }
 
 section#content {
@@ -101,14 +123,16 @@ section.list_content_block {
 }
 
 section.content_block {
-	width:250px;
-	height:170px;
-	padding:0;
+	font-family: moderncraft;
+	letter-spacing: 1px;
+	width:230px;
+	height:160px;
+	padding:10px 0 0 20px;
 	margin-bottom:20px;
 	border:0;
 	float:right;
 	clear:right;
-	background-color:#999;
+	background-color:#e2c593;
 }
 
 section.list_content_info {
@@ -118,19 +142,13 @@ section.list_content_info {
 }
 
 section.info {
-	width:710px;
+	width:730px;
 	height:160px;
 	padding:0;
 	border:0;
 	background-color:#777;
-	margin:23px 0 0 20px;
-}
-
-section#col_right > div.info_block{
-	width:180px;
-	height:186px;
-	background:red;
-	margin-bottom:10px;
+	margin:23px 0 0 0px;
+	opacity: 0.3;
 }
 
 #main > footer {
@@ -141,4 +159,9 @@ section#col_right > div.info_block{
 	margin:0;
 	border:0;
 	padding:0;
+}
+
+/** jQuery UI specification */
+.ui-progressbar-value {
+	background:#719843;
 }

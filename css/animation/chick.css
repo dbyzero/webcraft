@@ -3,9 +3,15 @@
 	height: 22px;
 	width: 20px;
 	position:absolute;
-	top:88px;
-	left:227;
+	top:0px;
+	left:0px;
 	z-index:11;
+	transform:translate(227px,88px);
+	-webkit-transform:translate(227px,88px);
+	-ms-transform:translate(227px,88px);
+	-moz-transform:translate(227px,88px);
+	-o-transform:translate(227px,88px);
+	display:block;
 }
 
 .chick {
@@ -14,6 +20,22 @@
 	position:absolute;
 	top:0px;
 	left:0px;
+}
+
+.chick-zero-walking-left {
+	-webkit-animation: chick-walking-left 0.8s steps(8) infinite;
+	-o-animation: chick-walking-left 0.8s steps(8) infinite;
+	-moz-animation: chick-walking-left 0.8s steps(8) infinite;
+	animation: chick-walking-left 0.8s steps(8) infinite;
+	background: url(../../asset/spritesheet/chick.png) 0 -22 no-repeat; 
+}
+
+.chick-zero-walking-right {
+	-webkit-animation: chick-walking-right 0.8s steps(8) infinite;
+	-o-animation: chick-walking-right 0.8s steps(8) infinite;
+	-moz-animation: chick-walking-right 0.8s steps(8) infinite;
+	animation: chick-walking-right 0.8s steps(8) infinite;
+	background: url(../../asset/spritesheet/chick.png) 0 0 no-repeat; 
 }
 
 .chick-walking-left {
@@ -30,8 +52,6 @@
 	-moz-animation: chick-walking-right 0.4s steps(8) infinite;
 	animation: chick-walking-right 0.4s steps(8) infinite;
 	background: url(../../asset/spritesheet/chick.png) 0 0 no-repeat; 
-	height: 22px;
-	width: 20px;
 }
 
 @-webkit-keyframes chick-walking-right
