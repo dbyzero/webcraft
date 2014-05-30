@@ -10,7 +10,7 @@ html, body {
 	padding:0;
 	font-family:arial;
 	font-size:14px;
-	background-color:#ebe1ce;
+	background-color:#FFF8EA;
 }
 
 a {
@@ -19,12 +19,16 @@ a {
 }
 
 a:hover {
-	color:#4c4c24;
+	color:#719843;
 }
 
 section#main {
 	margin:0 auto 0 auto;
 	width:1000px;
+}
+
+div.spacer {
+	clear:both;
 }
 
 #main > header {
@@ -76,7 +80,7 @@ section#main {
 }
 
 #main > header > menu a:hover {
-	color:#444444;
+	color:#719843;
 }
 
 #main > header > menu > ul {
@@ -142,6 +146,7 @@ section.content_block p.subtitle_progress_bar {
 
 section.content_block p.title_block {
 	font-family: moderncraft;
+	margin:10px 0;
 }
 
 section.content_block ul {
@@ -160,13 +165,13 @@ section.list_content_info {
 }
 
 section.info {
-	width:730px;
-	height:160px;
-	padding:0;
+	font-family: moderncraft;
+	width:715px;
+	height:145px;
+	padding:15px 0 0 15px;
 	border:0;
-	background-color:#777;
+	background-color:#D8D8D8;
 	margin:23px 0 0 0px;
-	opacity: 0.3;
 }
 
 #main > footer {
@@ -194,4 +199,43 @@ span.green_square {
 
 p.howitworks {
 	font-weight:bold;
+	letter-spacing: 2px;
+	font-size:15px;
+	font-family: moderncraft;
+}
+
+div.block_username {
+	float:left;
+	margin: 3px 0 0 6px;
+}
+
+div.icon24rpg {
+	height:24px;
+	width:24px;
+	background: url(../asset/spritesheet/icons_24.png) 0px 0px no-repeat;
+	float:left;
+}
+
+div.icon24rpgBoots {
+	background-position: -96px -216px;
+}
+
+div.icon24rpgLife {
+	background-position: 0px 0px;
+}
+
+div.icon24rpgDead {
+	background-position: -168px -72px;
+}
+
+div.icon24rpgGrimReaper {
+	background-position: -144px -96px;
+}
+
+div.icon24rpgCraft {
+	background-position: -48px -120px;
+}
+
+div.icon24rpgKill {
+	background-position: -168px -144px;
 }
