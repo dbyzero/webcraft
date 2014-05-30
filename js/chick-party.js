@@ -128,6 +128,7 @@ $(document).ready(function(){
 		} else {
 			mainLoopStart();
 		}
+		window.scrollTo(0);
 		e.preventDefault();
 		return false;
 	})

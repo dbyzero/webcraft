@@ -5,7 +5,7 @@ div.campfire {
 	-o-animation: campfire-animation 0.4s steps(4) infinite;
 	-moz-animation: campfire-animation 0.4s steps(4) infinite;
 	animation: campfire-animation 0.4s steps(4) infinite;
-	background: url(../../asset/spritesheet/campfire.png) 0 -22 no-repeat; 
+	background: url(../../asset/spritesheet/campfire.png) 0 -22px no-repeat; 
 	position:absolute;
 	bottom:0px;
 	right:0px;

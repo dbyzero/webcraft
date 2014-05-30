@@ -140,6 +140,10 @@ section.content_block p.subtitle_progress_bar {
 	margin:0;
 }
 
+section.content_block p.title_block {
+	font-family: moderncraft;
+}
+
 section.content_block ul {
 	padding:0;
 	margin:10px 0 0 0;
@@ -178,4 +182,16 @@ section.info {
 /** jQuery UI specification */
 .ui-progressbar-value {
 	background:#719843;
+}
+
+span.green_square {
+	width:10px;
+	height:10px;
+	background-color:green;
+	display: inline-block;
+	margin: 1px 0 -1px 0;
+}
+
+p.howitworks {
+	font-weight:bold;
 }
