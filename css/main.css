@@ -213,6 +213,14 @@ p.howitworks {
 	font-family: moderncraft;
 }
 
+p.whoisbehind {
+	font-weight:bold;
+	margin-left: 20px;
+	letter-spacing: 1px;
+	font-size:12px;
+	font-family: moderncraft;
+}
+
 div.block_username {
 	float:left;
 	margin: 3px 0 0 6px;

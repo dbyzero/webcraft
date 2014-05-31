@@ -27,6 +27,7 @@ $(document).ready(function(){
 	var menuHeight = $('header > menu').height();
 	var websiteWidth = $('#main').width();
 	var windowHeight = $(window).height();
+	var windowWidth = $(window).width();
 
 	//used in process
 	var currentTime = new Date().getTime();
@@ -72,6 +73,8 @@ $(document).ready(function(){
 
 		for (i in listChicks) {
 			chick = listChicks[i];
+			chick['ax'] = wind;
+			chick['ay'] = gravity;
 			chick['vx'] += parseInt((chick['ax'] * dt)/1000);
 			chick['vy'] += parseInt((chick['ay'] * dt)/1000);
 			chick['px'] += parseInt((chick['vx'] * dt)/1000);
@@ -85,16 +88,16 @@ $(document).ready(function(){
 
 			//out of screen
 			$elem = $('#chick-'+chick['id']);
-			if(chick['py'] > windowHeight) {
+			if(chick['py'] > windowHeight || chick['py'] < 0 - chickHeight) {
 				$elem.remove();
 				listChicks.splice(i, 1);
 				continue;
 			}
-			//if($elem.attr('offsetLeft') < 0 || $elem.attr('offsetLeft') > $(window).width() -chickWidth) {
-			//	$elem.remove();
-			//	listChicks.splice(i, 1);
-			//	continue;
-			//}
+			if($elem.attr('offsetLeft') < 0-chickWidth || $elem.attr('offsetLeft') > windowWidth) {
+				$elem.remove();
+				listChicks.splice(i, 1);
+				continue;
+			}
 
 			$elem.css('transform','translate('+chick['px']+'px,'+chick['py']+'px)');
 		};
@@ -112,6 +115,7 @@ $(document).ready(function(){
 			$chickZero.hide();
 			$('body').css('overflow','hidden');
 			chicksLoop.start(mainLoopFn);
+			$( "#popup-ckickparty-setting" ).dialog("open");
 	}
 	var mainLoopStop = function(){
 			chicksLoop.stop();
@@ -119,6 +123,7 @@ $(document).ready(function(){
 			$chickZero.show();
 			$('body').css('overflow','auto');
 			$(selectorCss).remove();
+			$( "#popup-ckickparty-setting" ).dialog("close");
 	}
 
 	KeyController.addManagedKey(KeyController.keys.SPACE);
@@ -161,4 +166,69 @@ $(document).ready(function(){
 		}
 	}
 	chickZeroLoop.start(chickenZeroLoopFn);
+
+	//dialog de gestion des settings
+	$( "#popup-ckickparty-setting" ).dialog({
+		autoOpen: false,
+		height: 300,
+		width: 350,
+		resizable: false,
+		buttons: {
+			Ok: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
+
+	//dialog de gestion des settings
+	$( "#popup-ckickparty-setting-speedX" ).slider({
+		range: "min",
+		value: 150,
+		min: 50,
+		max: 500,
+		slide: function( event, ui ) {
+			chickSpeedX = ui.value;
+			$( "#popup-ckickparty-setting-speedX-val" ).text( ui.value );
+		}
+	});
+	$( "#popup-ckickparty-setting-speedY" ).slider({
+		range: "min",
+		value: -450,
+		min: -1000,
+		max: 0,
+		slide: function( event, ui ) {
+			chickSpeedY = ui.value;
+			$( "#popup-ckickparty-setting-speedY-val" ).text( ui.value );
+		}
+	});
+	$( "#popup-ckickparty-setting-gravity" ).slider({
+		range: "min",
+		value: 1000,
+		min: 500,
+		max: 10000,
+		slide: function( event, ui ) {
+			gravity = ui.value;
+			$( "#popup-ckickparty-setting-gravity-val" ).text( ui.value );
+		}
+	});
+	$( "#popup-ckickparty-setting-wind" ).slider({
+		range: "min",
+		value: 0,
+		min: -1000,
+		max: 1000,
+		slide: function( event, ui ) {
+			wind = ui.value;
+			$( "#popup-ckickparty-setting-wind-val" ).text( ui.value );
+		}
+	});
+	$( "#popup-ckickparty-setting-maxchick" ).slider({
+		range: "min",
+		value: 300,
+		min: 10,
+		max: 1000,
+		slide: function( event, ui ) {
+			maxChick = ui.value;
+			$( "#popup-ckickparty-setting-maxchick-val" ).text( ui.value );
+		}
+	});
 });
